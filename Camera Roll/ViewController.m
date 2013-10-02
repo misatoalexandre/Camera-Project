@@ -17,6 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.statusLabel.text=@"No image";
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -28,22 +29,56 @@
 }
 
 - (IBAction)selectPhoto:(id)sender {
+    self.selectPhoto=YES;
     self.statusLabel.text=@"Selecting a photo";
     [self startCameraControllerFromViewController:self usingDelegate:self];
     
+
+}
+
+- (IBAction)camera:(id)sender {
+    self.selectPhoto=NO;
+    [self startCameraControllerFromViewController:self usingDelegate:self];
+}
+
+- (IBAction)save:(id)sender {
+    if (self.imageView.image) {
+        self.statusLabel.text=@"Saving image...";
+        
+        UIImageWriteToSavedPhotosAlbum(self.imageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+    }else{
+        self.statusLabel.text=@"Cannot save: no image.";
+    }
     
+}
+
+
+
+#pragma mark- Save Image Callbacks
+-(void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
+    if (error) {
+        self.statusLabel.text=[NSString stringWithFormat:@"Error %d: %@", error.code, error.localizedDescription];
+    }else{
+        self.statusLabel.text=@"Image saved.";
+        self.imageView.image=nil;
+    }
 }
 
 #pragma mark-UIImagePickerControllerDelegate Methods
 -(BOOL) startCameraControllerFromViewController:(UIViewController *)controller usingDelegate:(id<UIImagePickerControllerDelegate, UINavigationControllerDelegate>) delegate{
     
+    
+    
     if (([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]==NO ) || (delegate ==nil)|| (controller==nil) )
         //not available
         return NO;
-        
-        UIImagePickerController *cameraUI=[[UIImagePickerController alloc]init];
+    UIImagePickerController *cameraUI=[[UIImagePickerController alloc]init];
+    if (self.selectPhoto) {
         cameraUI.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
-        
+    } else
+        cameraUI.sourceType=UIImagePickerControllerSourceTypeCamera;
+    
+    
         cameraUI.delegate=delegate;
         [controller presentViewController:cameraUI animated:YES completion:nil];
     
