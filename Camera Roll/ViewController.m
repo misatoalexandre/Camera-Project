@@ -52,6 +52,7 @@
     
 }
 
+//Share button
 - (IBAction)shareButton:(id)sender {
     NSLog(@"Just testing");
     NSString *text=@"Hey! my photo update.";
