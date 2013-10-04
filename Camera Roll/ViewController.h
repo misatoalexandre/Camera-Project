@@ -16,5 +16,6 @@
 - (IBAction)selectPhoto:(id)sender;
 - (IBAction)camera:(id)sender;
 - (IBAction)save:(id)sender;
+- (IBAction)shareButton:(id)sender;
 
 @end

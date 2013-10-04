@@ -52,6 +52,15 @@
     
 }
 
+- (IBAction)shareButton:(id)sender {
+    NSLog(@"Just testing");
+    NSString *text=@"Hey! my photo update.";
+    UIImage *shareImage=self.imageView.image;
+    NSArray *items=@[text, shareImage];
+    UIActivityViewController *avc=[[UIActivityViewController alloc]initWithActivityItems:items applicationActivities:nil];
+    [self presentViewController:avc animated:YES completion:nil];
+}
+
 
 
 #pragma mark- Save Image Callbacks

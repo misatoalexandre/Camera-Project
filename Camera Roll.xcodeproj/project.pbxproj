@@ -21,6 +21,7 @@
 		5339DDD717FCA47D000AC456 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5339DDB917FCA47D000AC456 /* UIKit.framework */; };
 		5339DDDF17FCA47D000AC456 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5339DDDD17FCA47D000AC456 /* InfoPlist.strings */; };
 		5339DDE117FCA47D000AC456 /* Camera_RollTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5339DDE017FCA47D000AC456 /* Camera_RollTests.m */; };
+		5339DE4017FF07F5000AC456 /* 15.png in Resources */ = {isa = PBXBuildFile; fileRef = 5339DE3F17FF07F5000AC456 /* 15.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		5339DDDC17FCA47D000AC456 /* Camera RollTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Camera RollTests-Info.plist"; sourceTree = "<group>"; };
 		5339DDDE17FCA47D000AC456 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5339DDE017FCA47D000AC456 /* Camera_RollTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Camera_RollTests.m; sourceTree = "<group>"; };
+		5339DE3F17FF07F5000AC456 /* 15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 15.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		5339DDBC17FCA47D000AC456 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5339DE3F17FF07F5000AC456 /* 15.png */,
 				5339DDBD17FCA47D000AC456 /* Camera Roll-Info.plist */,
 				5339DDBE17FCA47D000AC456 /* InfoPlist.strings */,
 				5339DDC117FCA47D000AC456 /* main.m */,
@@ -231,6 +234,7 @@
 				5339DDCE17FCA47D000AC456 /* Images.xcassets in Resources */,
 				5339DDC017FCA47D000AC456 /* InfoPlist.strings in Resources */,
 				5339DDC917FCA47D000AC456 /* Main.storyboard in Resources */,
+				5339DE4017FF07F5000AC456 /* 15.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +458,7 @@
 				5339DDE617FCA47D000AC456 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5339DDE717FCA47D000AC456 /* Build configuration list for PBXNativeTarget "Camera RollTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +467,7 @@
 				5339DDE917FCA47D000AC456 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
